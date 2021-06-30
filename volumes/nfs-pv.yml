@@ -4,9 +4,9 @@ metadata:
   name: nfs
 spec:
   capacity:
-    storage: 200Mi
+    storage: 100Gi
   accessModes:
     - ReadWriteMany
   nfs:
     server: goji
-    path: "/srv/nfs"
+    path: "/srv/nfs/kubernetes"

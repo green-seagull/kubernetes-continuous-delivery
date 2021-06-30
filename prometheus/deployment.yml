@@ -1,0 +1,27 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prometheus
+spec:
+  selector:
+    matchLabels:
+      app: prometheus
+  template:
+    metadata:
+      labels:
+        app: prometheus
+    spec:
+      containers:
+      - name: prometheus
+        image: prom/prometheus:v2.22.2
+        ports:
+        - name: http
+          containerPort: 9090
+        volumeMounts:
+          - name: nfs
+            mountPath: "/etc/prometheus"
+      volumes:
+      - name: nfs
+        persistentVolumeClaim:
+          claimName: nfs
