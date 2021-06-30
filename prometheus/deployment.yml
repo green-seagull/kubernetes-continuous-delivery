@@ -19,9 +19,9 @@ spec:
         - name: http
           containerPort: 9090
         volumeMounts:
-          - name: nfs
+          - name: prometheus-v
             mountPath: "/etc/prometheus"
       volumes:
-      - name: nfs
+      - name: prometheus-v
         persistentVolumeClaim:
-          claimName: nfs
+          claimName: prometheus-pvc
