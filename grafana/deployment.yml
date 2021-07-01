@@ -1,0 +1,45 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grafana
+spec:
+  selector:
+    matchLabels:
+      app: grafana
+  template:
+    metadata:
+      labels:
+        app: grafana
+    spec:
+      containers:
+      - name: grafana
+        image: grafana/grafana:7.1.0
+        ports:
+        - name: http
+          containerPort: 3000
+        volumeMounts:
+          - name: grafana-datasources-v
+            mountPath: "/etc/grafana/provisioning/datasources/"
+          - name: grafana-dashboards-v
+            mountPath: "/var/lib/grafana/dashboards/"
+          - name: grafana-dashboards-config-v
+            mountPath: "/etc/grafana/provisioning/dashboards/"
+          - name: grafana-storage-v
+            mountPath: "/var/lib/grafana"
+      securityContext:
+        runAsUser: 1000
+        fsGroup: 1000 # must match PV user id
+      volumes:
+      - name: grafana-datasources-v
+        persistentVolumeClaim:
+          claimName: grafana-datasources-pvc
+      - name: grafana-dashboards-v
+        persistentVolumeClaim:
+          claimName: grafana-dashboards-pvc
+      - name: grafana-dashboards-config-v
+        persistentVolumeClaim:
+          claimName: grafana-dashboards-config-pvc
+      - name: grafana-storage-v
+        persistentVolumeClaim:
+          claimName: grafana-storage-pvc
