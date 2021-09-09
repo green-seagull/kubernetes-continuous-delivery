@@ -22,7 +22,7 @@ spec:
           tcpSocket:
             port: 3000
           initialDelaySeconds: 15
-          periodSeconds: 20
+          periodSeconds: 30
         volumeMounts:
           - name: grafana-datasources-v
             mountPath: "/etc/grafana/provisioning/datasources/"
