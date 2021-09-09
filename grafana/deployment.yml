@@ -18,6 +18,11 @@ spec:
         ports:
         - name: http
           containerPort: 3000
+        livenessProbe:
+          tcpSocket:
+            port: 3000
+          initialDelaySeconds: 15
+          periodSeconds: 20
         volumeMounts:
           - name: grafana-datasources-v
             mountPath: "/etc/grafana/provisioning/datasources/"

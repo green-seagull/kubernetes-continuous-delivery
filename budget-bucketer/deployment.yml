@@ -18,3 +18,9 @@ spec:
         ports:
         - name: http
           containerPort: 10000
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 10000
+          initialDelaySeconds: 3
+          periodSeconds: 15
