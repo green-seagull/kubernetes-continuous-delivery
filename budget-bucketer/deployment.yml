@@ -4,6 +4,7 @@ kind: Deployment
 metadata:
   name: budget-bucketer
 spec:
+  replicas: 2
   selector:
     matchLabels:
       app: budget-bucketer
@@ -18,9 +19,3 @@ spec:
         ports:
         - name: http
           containerPort: 10000
-        livenessProbe:
-          httpGet:
-            path: /
-            port: 10000
-          initialDelaySeconds: 30
-          periodSeconds: 15
