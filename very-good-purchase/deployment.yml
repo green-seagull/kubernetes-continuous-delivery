@@ -1,0 +1,21 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: very-good-purchase
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: very-good-purchase
+  template:
+    metadata:
+      labels:
+        app: very-good-purchase
+    spec:
+      containers:
+        - name: very-good-purchase
+          image: berrydockerregistry:5000/very-good-purchase:0.0.2
+          ports:
+          - name: http
+            containerPort: 8080
