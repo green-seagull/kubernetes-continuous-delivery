@@ -4,12 +4,12 @@ kind: Service
 metadata:
   name: budget-bucketer-service
 spec:
-  loadBalancerIP: 192.168.1.250
+  loadBalancerIP: 192.168.1.221
   ports:
-    - name: http
-      port: 80
-      protocol: TCP
-      targetPort: 80
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 80
   selector:
     app: budget-bucketer
   type: LoadBalancer
