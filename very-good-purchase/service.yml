@@ -4,7 +4,7 @@ kind: Service
 metadata:
   name: very-good-purchase-service
 spec:
-  loadBalancerIP: 192.168.1.244
+  loadBalancerIP: 192.168.1.230
   ports:
     - name: http
       port: 80

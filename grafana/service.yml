@@ -4,7 +4,7 @@ kind: Service
 metadata:
   name: grafana-service
 spec:
-  loadBalancerIP: 192.168.1.243
+  loadBalancerIP: 192.168.1.222
   ports:
   - name: http
     port: 80
