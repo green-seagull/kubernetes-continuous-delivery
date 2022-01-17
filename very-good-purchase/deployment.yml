@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   name: very-good-purchase
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: very-good-purchase
