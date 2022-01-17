@@ -83,7 +83,7 @@ metadata:
   name: grafana-storage-pv
 spec:
   capacity:
-    storage: 5Gi
+    storage: 1Gi
   accessModes:
     - ReadWriteMany
   nfs:
