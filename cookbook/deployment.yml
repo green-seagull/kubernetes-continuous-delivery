@@ -1,0 +1,21 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cookbook
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cookbook
+  template:
+    metadata:
+      labels:
+        app: cookbook
+    spec:
+      containers:
+      - name: cookbook
+        image: berrydockerregistry:5000/cookbook
+        ports:
+        - name: http
+          containerPort: 10000
