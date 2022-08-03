@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: cookbook
-        image: berrydockerregistry:5000/cookbook
+        image: berrydockerregistry:5000/cookbook:c66e354c2e70e33e4aade0fdb651745a9e0fe427
         ports:
         - name: http
           containerPort: 10000
