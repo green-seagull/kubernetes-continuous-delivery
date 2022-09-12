@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: budget-bucketer
-        image: berrydockerregistry:5000/budget-bucketer:daa1949f4e78f7d987283dbe8d43ca217a7b468c
+        image: berrydockerregistry:5000/budget-bucketer:49bc30baab002be53255ae3a521d9cf924d5c40e
         ports:
         - name: http
           containerPort: 10000
