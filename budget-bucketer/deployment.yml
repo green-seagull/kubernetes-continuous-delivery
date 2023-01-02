@@ -15,7 +15,9 @@ spec:
     spec:
       containers:
       - name: budget-bucketer
-        image: berrydockerregistry:5000/budget-bucketer:49bc30baab002be53255ae3a521d9cf924d5c40e
+        image: walrusu/azurecalifornium:navy-snail-039896b669fe480bb653b9e9447361fcce72e6d4
         ports:
         - name: http
-          containerPort: 10000
+          containerPort: 3000
+      imagePullSecrets:
+        - name: regcred
