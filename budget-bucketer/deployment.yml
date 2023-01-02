@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: budget-bucketer
-        image: walrusu/azurecalifornium:navy-snail-b0f0389d4f8556e143949aec2bc27811733fcca8
+        image: walrusu/azurecalifornium:navy-snail-55b58c401b65dc71df30b51addcd4c466e841dce
         ports:
         - name: http
           containerPort: 3000
